@@ -14,6 +14,9 @@
 		413798272BB466EE000765EF /* WalkShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798262BB466EE000765EF /* WalkShareTests.swift */; };
 		413798312BB466EE000765EF /* WalkShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798302BB466EE000765EF /* WalkShareUITests.swift */; };
 		413798332BB466EE000765EF /* WalkShareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798322BB466EE000765EF /* WalkShareUITestsLaunchTests.swift */; };
+		413798402BB47021000765EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137983F2BB47021000765EF /* HomeView.swift */; };
+		413798422BB47320000765EF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798412BB47320000765EF /* Home.swift */; };
+		413798442BB4742F000765EF /* WalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798432BB4742F000765EF /* WalkingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		4137982C2BB466EE000765EF /* WalkShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		413798302BB466EE000765EF /* WalkShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkShareUITests.swift; sourceTree = "<group>"; };
 		413798322BB466EE000765EF /* WalkShareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkShareUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4137983F2BB47021000765EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		413798412BB47320000765EF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		413798432BB4742F000765EF /* WalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				413798172BB466EB000765EF /* ContentView.swift */,
 				413798192BB466EE000765EF /* Assets.xcassets */,
 				4137981B2BB466EE000765EF /* Preview Content */,
+				4137983F2BB47021000765EF /* HomeView.swift */,
+				413798412BB47320000765EF /* Home.swift */,
+				413798432BB4742F000765EF /* WalkingView.swift */,
 			);
 			path = WalkShare;
 			sourceTree = "<group>";
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413798402BB47021000765EF /* HomeView.swift in Sources */,
+				413798442BB4742F000765EF /* WalkingView.swift in Sources */,
 				413798182BB466EB000765EF /* ContentView.swift in Sources */,
+				413798422BB47320000765EF /* Home.swift in Sources */,
 				413798162BB466EB000765EF /* WalkShareApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
