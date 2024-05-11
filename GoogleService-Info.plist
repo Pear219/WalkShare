@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>110852280706-amhl793arqjafr69m6ijg1rjf589baal.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.110852280706-amhl793arqjafr69m6ijg1rjf589baal</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA4yB_XHzw4W1rRvnQU0yhlyfkQ3dQKveA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>110852280706</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>app.kato.kokona.WalkShare</string>
+	<key>PROJECT_ID</key>
+	<string>sharewalk-82af4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sharewalk-82af4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:110852280706:ios:b26b9395a4262dbeab7f9b</string>
+</dict>
+</plist>

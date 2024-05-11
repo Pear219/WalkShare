@@ -14,7 +14,7 @@ struct Friend: Identifiable {
     var name: String
     var walking: String
 }
-struct Home: View {
+struct HomeView: View {
     @State var name = "名前"
     @State var prefecture = "都道府県"
     @State var city = "市区町村"
@@ -112,8 +112,8 @@ extension Color {
 }
 
 
-struct Home_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
 }

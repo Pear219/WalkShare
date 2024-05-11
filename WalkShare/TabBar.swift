@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-struct TabView: View {
+struct TabBar: View {
     var body: some View {
-            Home()
+        TabView {
+            HomeView()
                 .tabItem {
                     Image(systemName: "house")
                 }
-        WalkingView()
+            WalkingView()
                 .tabItem {
                     Image(systemName: "figure.walk")
                 }
+        }
     }
 }
 
-struct TabView_Previews: PreviewProvider {
+struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabView()
+        TabBar()
     }
 }
