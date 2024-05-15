@@ -9,7 +9,20 @@ import SwiftUI
 
 struct TutorialView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("〇〇(アプリ名)へようこそ！")
+                    .font(.system(size: 30, weight: .bold, design: .default))
+                    .padding(.top, -150)
+                Text("このアプリは他の人とウォーキングのコースを\n共有できるアプリです")
+                    .font(.system(size: 15, weight: .light, design: .default))
+                    .padding(.top, -80)
+                NavigationLink(destination: SetNameView()) {
+                    Text("次へ")
+                }
+            }
+            .multilineTextAlignment(.center)
+        }
     }
 }
 

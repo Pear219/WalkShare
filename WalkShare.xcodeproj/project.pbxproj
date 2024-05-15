@@ -47,6 +47,8 @@
 		41870E8F2BEFFB2000D8E4D7 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41870E8E2BEFFB2000D8E4D7 /* GoogleSignInSwift */; };
 		41870E912BEFFBDA00D8E4D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */; };
 		41870E932BEFFC5100D8E4D7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870E922BEFFC5100D8E4D7 /* LoginView.swift */; };
+		41870ED42BF3B21200D8E4D7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870ED32BF3B21200D8E4D7 /* TutorialView.swift */; };
+		41870ED62BF50E6F00D8E4D7 /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870ED52BF50E6F00D8E4D7 /* SetNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		41870E922BEFFC5100D8E4D7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		41870E942BEFFC9800D8E4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		41870ED32BF3B21200D8E4D7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		41870ED52BF50E6F00D8E4D7 /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 				41870E922BEFFC5100D8E4D7 /* LoginView.swift */,
 				41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */,
 				41870E942BEFFC9800D8E4D7 /* Info.plist */,
+				41870ED32BF3B21200D8E4D7 /* TutorialView.swift */,
+				41870ED52BF50E6F00D8E4D7 /* SetNameView.swift */,
 			);
 			path = WalkShare;
 			sourceTree = "<group>";
@@ -365,9 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41870ED42BF3B21200D8E4D7 /* TutorialView.swift in Sources */,
 				41870E932BEFFC5100D8E4D7 /* LoginView.swift in Sources */,
 				413798402BB47021000765EF /* TabBar.swift in Sources */,
 				413798442BB4742F000765EF /* WalkingView.swift in Sources */,
+				41870ED62BF50E6F00D8E4D7 /* SetNameView.swift in Sources */,
 				413798182BB466EB000765EF /* ContentView.swift in Sources */,
 				413798422BB47320000765EF /* HomeView.swift in Sources */,
 				413798162BB466EB000765EF /* WalkShareApp.swift in Sources */,

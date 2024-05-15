@@ -23,6 +23,7 @@ struct LoginView: View {
         .padding()
     }
     func handleSignInButton() {
+
         guard let presentingViewController = UIApplication.shared.windows.first?.rootViewController else {
             return
         }
@@ -48,7 +49,7 @@ struct LoginView: View {
     }
 }
 
-struct LogintView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
