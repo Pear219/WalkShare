@@ -91,6 +91,7 @@ struct HomeView: View {
             }
 //            .navigationBarTitle("Home")
         }
+        .multilineTextAlignment(.center)
     }
 }
 

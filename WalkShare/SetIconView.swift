@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct SetIconView: View {
+    @State private var city: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Picker(selection: $city, label: Text("フルーツ")) {
+            Text("apple").tag(0)
+            Text("banana").tag(1)
+            Text("orange").tag(2)
+            }
+        .pickerStyle(WheelPickerStyle())
+        }
     }
 }
 
