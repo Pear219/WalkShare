@@ -15,41 +15,7 @@ struct SetCityView: View {
     private var db = Firestore.firestore()
     @State var cityTextField: String = ""
     @State var isNextIconViewActive = false // 追加：次のビューがアクティブかどうかを示す状態変数
-    
-//    var body: some View {
-//        VStack {
-//            VStack(spacing: 20) {
-//                Text("名前を入力してください")
-//                    .font(.system(size: 30, weight: .heavy, design: .default))
-//                    .padding(.top, -200)
-//                Text("本名は入力しないでください")
-//                    .font(.system(size: 20, weight: .regular, design: .default))
-//                    .padding(.top, -170)
-//                TextField("名前を入力してください", text: $nameTextField)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .padding(.horizontal, 40)
-//                    .padding(.top, -150)
-//            }
-//            NavigationLink(destination: SetCityView(), isActive: $isNextCityViewActive) {
-//                EmptyView()
-//            }
-//            .ignoresSafeArea(.keyboard, edges: .bottom)
-//            Button(action: {
-//                saveNameToFirestore()
-//                isNextCityViewActive = true
-//            }) {
-//                Text("次へ")
-//                    .frame(width: 300, height: 50)
-//                    .background(Color(hex: "#39FF14"), in: RoundedRectangle(cornerRadius: 20))
-////                    .padding(.top, -280)
-//                    .foregroundColor(.black)
-//                    .font(.system(size: 15, weight: .heavy, design: .default))
-//                
-//            }
-//            .multilineTextAlignment(.center)
-//        }
-//        .ignoresSafeArea(.keyboard, edges: .all)
-//    }
+
     var body: some View {
         VStack{
             VStack(spacing: 20) {

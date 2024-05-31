@@ -18,38 +18,42 @@ struct SetNameView: View {
     
 
     var body: some View {
-        VStack {
-            VStack(spacing: 20) {
-                Text("名前を入力してください")
-                    .font(.system(size: 30, weight: .heavy, design: .default))
-                    .padding(.top, -200)
-                Text("本名は入力しないでください")
-                    .font(.system(size: 20, weight: .regular, design: .default))
-                    .padding(.top, -180)
-                TextField("名前を入力してください", text: $nameTextField)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal, 40)
-                    .padding(.top, -160)
+        GeometryReader { geometry in
+            VStack {
+                VStack(spacing: 20) {
+                    Text("名前を入力してください")
+                        .font(.system(size: 30, weight: .heavy, design: .default))
+                        .padding(.top, -200)
+                    Text("本名は入力しないでください")
+                        .font(.system(size: 20, weight: .regular, design: .default))
+                        .padding(.top, -180)
+                    TextField("名前を入力してください", text: $nameTextField)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal, 40)
+                        .padding(.top, -160)
+                }
+                NavigationLink(destination: SetCityView(), isActive: $isNextCityViewActive) {
+                    EmptyView()
+                }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
+                Button(action: {
+                    saveNameToFirestore()
+                    isNextCityViewActive = true
+                }) {
+                    Text("次へ")
+                        .frame(width: 300, height: 50)
+                        .background(Color(hex: "#39FF14"), in: RoundedRectangle(cornerRadius: 20))
+                    //                    .padding(.top, -280)
+                        .foregroundColor(.black)
+                        .font(.system(size: 15, weight: .heavy, design: .default))
+                    
+                }
+                .multilineTextAlignment(.center)
             }
-            NavigationLink(destination: SetCityView(), isActive: $isNextCityViewActive) {
-                EmptyView()
-            }
-            .ignoresSafeArea(.keyboard, edges: .bottom)
-            Button(action: {
-                saveNameToFirestore()
-                isNextCityViewActive = true
-            }) {
-                Text("次へ")
-                    .frame(width: 300, height: 50)
-                    .background(Color(hex: "#39FF14"), in: RoundedRectangle(cornerRadius: 20))
-//                    .padding(.top, -280)
-                    .foregroundColor(.black)
-                    .font(.system(size: 15, weight: .heavy, design: .default))
-                
-            }
-            .multilineTextAlignment(.center)
+            .frame(minHeight: geometry.size.height) // Minimum height of the content
+            .padding(.bottom, geometry.safeAreaInsets.bottom)
         }
-        .ignoresSafeArea(.keyboard, edges: .all)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
     
     func saveNameToFirestore() {
