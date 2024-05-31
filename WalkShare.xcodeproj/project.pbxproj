@@ -24,6 +24,7 @@
 		415B95822C0246AD004E472E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 415B95812C0246AD004E472E /* FirebaseFirestore */; };
 		415B95842C0246AD004E472E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 415B95832C0246AD004E472E /* FirebaseFirestoreSwift */; };
 		415B95862C0246AD004E472E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 415B95852C0246AD004E472E /* FirebaseStorage */; };
+		415B95882C08EFA3004E472E /* FirstStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B95872C08EFA3004E472E /* FirstStartView.swift */; };
 		41870E8D2BEFFB2000D8E4D7 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 41870E8C2BEFFB2000D8E4D7 /* GoogleSignIn */; };
 		41870E8F2BEFFB2000D8E4D7 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41870E8E2BEFFB2000D8E4D7 /* GoogleSignInSwift */; };
 		41870E912BEFFBDA00D8E4D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */; };
@@ -66,6 +67,7 @@
 		413798412BB47320000765EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		413798432BB4742F000765EF /* WalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingView.swift; sourceTree = "<group>"; };
 		415B95782C00E0BE004E472E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		415B95872C08EFA3004E472E /* FirstStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartView.swift; sourceTree = "<group>"; };
 		41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		41870E922BEFFC5100D8E4D7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		41870E942BEFFC9800D8E4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				41D962DA2BF5FAB80036440B /* SetCityView.swift */,
 				41D962DC2BF632970036440B /* SetIconView.swift */,
 				415B95782C00E0BE004E472E /* AuthViewModel.swift */,
+				415B95872C08EFA3004E472E /* FirstStartView.swift */,
 			);
 			path = WalkShare;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				41870ED62BF50E6F00D8E4D7 /* SetNameView.swift in Sources */,
 				41D962DB2BF5FAB80036440B /* SetCityView.swift in Sources */,
 				415B95792C00E0BE004E472E /* AuthViewModel.swift in Sources */,
+				415B95882C08EFA3004E472E /* FirstStartView.swift in Sources */,
 				413798182BB466EB000765EF /* ContentView.swift in Sources */,
 				413798422BB47320000765EF /* HomeView.swift in Sources */,
 				413798162BB466EB000765EF /* WalkShareApp.swift in Sources */,
@@ -489,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkShare/Preview Content\"";
+				DEVELOPMENT_TEAM = T8D2S8QXSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WalkShare/Info.plist;
@@ -518,6 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkShare/Preview Content\"";
+				DEVELOPMENT_TEAM = T8D2S8QXSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WalkShare/Info.plist;
