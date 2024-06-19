@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FirstStartView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("アプリ名〇〇を\n始めよう！")
+            .font(.system(size: 40, weight: .bold, design: .default))
+            .padding(.top, -100)
+            .multilineTextAlignment(.center)
     }
 }
 
