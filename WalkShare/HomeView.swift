@@ -1,11 +1,8 @@
-//
-//  Home.swift
-//  WalkShare
-//
-//  Created by 加藤 on 2024/03/28.
-//
-
 import SwiftUI
+import FirebaseFirestore
+import FirebaseAuth
+import Firebase
+import FirebaseStorage
 
 struct Friend: Identifiable {
     var id = UUID()
@@ -14,10 +11,14 @@ struct Friend: Identifiable {
     var name: String
     var walking: String
 }
+
 struct HomeView: View {
-    @State var name = "名前"
+    private var db = Firestore.firestore()
+    @State var name: String = "名前"
     @State var prefecture = "都道府県"
     @State var city = "市区町村"
+    @State var icon: UIImage? = nil
+    private var storage = Storage.storage()
     
     init () {
         UITableView.appearance().backgroundColor = .clear
@@ -29,39 +30,51 @@ struct HomeView: View {
         Friend(ranking: "3", image: "image3", name: "name3", walking: "walking3"),
         Friend(ranking: "3", image: "image3", name: "name3", walking: "walking3"),
         Friend(ranking: "3", image: "image3", name: "name3", walking: "walking3")
-        ]
+    ]
     
     var body: some View {
         NavigationView {
             ZStack {
                 Color(hex: "#F4F5F7").edgesIgnoringSafeArea(.all)
                 VStack {
-                    ZStack {
-                        Button {
-                            //多分ここにactionを書く
-                        } label: {
-                            Text("ボタン")
+                    Button {
+                        //多分ここにactionを書く
+                    } label: {
+                        HStack {
+                            if let icon = icon {
+                                Image(uiImage: icon)
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                    .padding(.leading, 30) // 必要に応じてパディングを調整
+                            }
+                            VStack(alignment: .leading) {
+                                Text(name)
+                                    .font(.system(size: 30, weight: .bold, design: .default))
+                                    .foregroundColor(.black) // テキストの色を黒に設定
+                                Text(prefecture)
+                                    .font(.system(size: 20, weight: .light, design: .default))
+                                    .foregroundColor(.black) // テキストの色を黒に設定
+                            }
+                            .padding(.leading, 30) // 必要に応じてパディングを調整
+                            Spacer()
                         }
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 310, height: 180) //臨機応変に
-                        .background(Color.white)
-                        .cornerRadius(12) // セルの角を丸める
-                        .shadow(color: Color.black, radius: 4, x: 1, y: 1)
-                        //                        .border(Color.black)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(.clear)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .stroke(Color(hex: "#39FF14"), lineWidth: 3)
-                                )
-                        )
-                        .padding(.top, 50) //ボタン全体の位置決め
-//                        HStack {
-//                            Image(systemName:"person")
-//                                .font(.system(size: 80))
-//                        }
+
                     }
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 310, height: 180) // 必要に応じてサイズを調整
+                    .background(Color.white)
+                    .cornerRadius(12) // セルの角を丸める
+                    .shadow(color: Color.black, radius: 4, x: 1, y: 1)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(.clear)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color(hex: "#39FF14"), lineWidth: 3)
+                            )
+                    )
+                    .padding(.top, 30)
                     List {
                         ForEach(friendsRanking) { friend in
                             VStack {
@@ -84,17 +97,54 @@ struct HomeView: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))  // Important!
                     .scrollContentBackground(.hidden)
                     .padding(.top, 0)
-//                    .background(.clear)
                     .frame(width: 350, height: 450)
                     .aspectRatio(contentMode: .fit)
                 }
             }
-//            .navigationBarTitle("Home")
         }
         .multilineTextAlignment(.center)
+        .onAppear {
+            getData()
+        }
+    }
+    
+    func getData() {
+        if let currentUser = Auth.auth().currentUser {
+            let userUid = currentUser.uid
+            let userDocRef = db.collection("user").document(userUid)
+            userDocRef.getDocument { (documentSnapshot, error) in
+                if let error = error {
+                    print("Error getting document: \(error)")
+                } else {
+                    if let document = documentSnapshot, document.exists {
+                        if let imageURL = document.data()?["iconURL"] as? String {
+                            let storageRef = self.storage.reference(forURL: imageURL)
+                            storageRef.getData(maxSize: 1*1024*1024) { (data, error) in
+                                if let error = error {
+                                    print("画像のダウンロードエラー: \(error)")
+                                } else {
+                                    if let data = data, let image = UIImage(data: data) {
+                                        self.name = document.get("name") as? String ?? "No name found"
+                                        self.icon = image
+                                        self.prefecture = document.get("city") as? String ?? "No prefecture"
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        userDocRef.getDocument { (documentSnapshot, error) in
+                            if let error = error {
+                                print("Error getting document: \(error)")
+                            } else {
+                                print("ここ")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-
 
 extension Color {
     init(hex: String) {
@@ -111,7 +161,6 @@ extension Color {
         )
     }
 }
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

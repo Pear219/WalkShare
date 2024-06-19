@@ -1,5 +1,5 @@
 //
-//  SeyIconView.swift
+//  SetIconView.swift
 //  WalkShare
 //
 //  Created by Kokona Kato on 2024/05/16.
@@ -84,7 +84,21 @@ struct SetIconView: View {
     }
     
     private func uploadImageToFirebase() {
-        guard let imageData = images.jpegData(compressionQuality: 0.8) else { return }
+        guard var imageData = images.jpegData(compressionQuality: 0.8) else { return }
+
+        let maxSize: Int = 1 * 1024 * 1024 // 1MB
+
+        // Compress the image until it is within the required size
+        var compressionQuality: CGFloat = 0.8
+        while imageData.count > maxSize && compressionQuality > 0.1 {
+            compressionQuality -= 0.1
+            imageData = images.jpegData(compressionQuality: compressionQuality)!
+        }
+
+        if imageData.count > maxSize {
+            print("Image is too large to upload")
+            return
+        }
 
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -145,7 +159,6 @@ struct SetIconView: View {
         }
     }
 }
-
 
 #Preview {
     SetIconView()

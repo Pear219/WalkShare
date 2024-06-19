@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		413798162BB466EB000765EF /* WalkShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798152BB466EB000765EF /* WalkShareApp.swift */; };
-		413798182BB466EB000765EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798172BB466EB000765EF /* ContentView.swift */; };
+		413798182BB466EB000765EF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798172BB466EB000765EF /* RootView.swift */; };
 		4137981A2BB466EE000765EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413798192BB466EE000765EF /* Assets.xcassets */; };
 		4137981D2BB466EE000765EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4137981C2BB466EE000765EF /* Preview Assets.xcassets */; };
 		413798272BB466EE000765EF /* WalkShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413798262BB466EE000765EF /* WalkShareTests.swift */; };
@@ -31,6 +31,8 @@
 		41870E932BEFFC5100D8E4D7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870E922BEFFC5100D8E4D7 /* LoginView.swift */; };
 		41870ED42BF3B21200D8E4D7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870ED32BF3B21200D8E4D7 /* TutorialView.swift */; };
 		41870ED62BF50E6F00D8E4D7 /* SetNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41870ED52BF50E6F00D8E4D7 /* SetNameView.swift */; };
+		419044622C160C20004663BB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419044612C160C20004663BB /* LocationManager.swift */; };
+		41B6DBF52C216EE800926FF6 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B6DBF42C216EE800926FF6 /* MapViewRepresentable.swift */; };
 		41D962DB2BF5FAB80036440B /* SetCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D962DA2BF5FAB80036440B /* SetCityView.swift */; };
 		41D962DD2BF632970036440B /* SetIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D962DC2BF632970036440B /* SetIconView.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +57,7 @@
 /* Begin PBXFileReference section */
 		413798122BB466EB000765EF /* WalkShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		413798152BB466EB000765EF /* WalkShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkShareApp.swift; sourceTree = "<group>"; };
-		413798172BB466EB000765EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		413798172BB466EB000765EF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		413798192BB466EE000765EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4137981C2BB466EE000765EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		413798222BB466EE000765EF /* WalkShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,8 @@
 		41870E942BEFFC9800D8E4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		41870ED32BF3B21200D8E4D7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		41870ED52BF50E6F00D8E4D7 /* SetNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameView.swift; sourceTree = "<group>"; };
+		419044612C160C20004663BB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		41B6DBF42C216EE800926FF6 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		41D962DA2BF5FAB80036440B /* SetCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCityView.swift; sourceTree = "<group>"; };
 		41D962DC2BF632970036440B /* SetIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,12 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				413798152BB466EB000765EF /* WalkShareApp.swift */,
-				413798172BB466EB000765EF /* ContentView.swift */,
+				413798172BB466EB000765EF /* RootView.swift */,
 				413798192BB466EE000765EF /* Assets.xcassets */,
 				4137981B2BB466EE000765EF /* Preview Content */,
 				4137983F2BB47021000765EF /* TabBar.swift */,
 				413798412BB47320000765EF /* HomeView.swift */,
-				413798432BB4742F000765EF /* WalkingView.swift */,
 				41870E922BEFFC5100D8E4D7 /* LoginView.swift */,
 				41870E902BEFFBDA00D8E4D7 /* GoogleService-Info.plist */,
 				41870E942BEFFC9800D8E4D7 /* Info.plist */,
@@ -149,6 +152,9 @@
 				41D962DC2BF632970036440B /* SetIconView.swift */,
 				415B95782C00E0BE004E472E /* AuthViewModel.swift */,
 				415B95872C08EFA3004E472E /* FirstStartView.swift */,
+				419044612C160C20004663BB /* LocationManager.swift */,
+				413798432BB4742F000765EF /* WalkingView.swift */,
+				41B6DBF42C216EE800926FF6 /* MapViewRepresentable.swift */,
 			);
 			path = WalkShare;
 			sourceTree = "<group>";
@@ -332,9 +338,11 @@
 				41D962DB2BF5FAB80036440B /* SetCityView.swift in Sources */,
 				415B95792C00E0BE004E472E /* AuthViewModel.swift in Sources */,
 				415B95882C08EFA3004E472E /* FirstStartView.swift in Sources */,
-				413798182BB466EB000765EF /* ContentView.swift in Sources */,
+				413798182BB466EB000765EF /* RootView.swift in Sources */,
+				41B6DBF52C216EE800926FF6 /* MapViewRepresentable.swift in Sources */,
 				413798422BB47320000765EF /* HomeView.swift in Sources */,
 				413798162BB466EB000765EF /* WalkShareApp.swift in Sources */,
+				419044622C160C20004663BB /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

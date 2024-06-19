@@ -22,7 +22,9 @@ struct LoginView: View {
                     Image(systemName: "globe")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
-                    Text("Hello, world!")
+                    Text("ようこそ、アプリ名〇〇へ！")
+                        .font(.system(size: 30, weight: .bold, design: .default))
+                        .padding(.top, -150)
                     GoogleSignInButton(action: authViewModel.handleSignInButton)
                 }
                 .padding()

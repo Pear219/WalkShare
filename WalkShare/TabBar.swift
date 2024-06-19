@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct TabBar: View {
+    @State var tabSelectedId: Int = 1
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
                 }
+                .tag(1)
             WalkingView()
                 .tabItem {
                     Image(systemName: "figure.walk")
                 }
+                .tag(2)
         }
+        
     }
 }
 

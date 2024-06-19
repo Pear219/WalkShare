@@ -30,7 +30,7 @@ struct WalkShareApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            RootView()
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
